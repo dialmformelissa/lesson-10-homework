@@ -1,6 +1,9 @@
+<p><%= link_to "Return to list", restaurants_path %></p>
 <h1><%= @restaurant.name %></h1>
-<p><%= @restaurant.street %></p>
-<p><%= @restaurant.city %></p>
-<p><%= @restaurant.state %></p>
-<p><%= @restaurant.country %></p>
-<p><%= @restaurant.postal_code %></p>
+<%= @restaurant.street %><br>
+<%= @restaurant.city %><br>
+<%= @restaurant.state %><br>
+<%= @restaurant.country %><br>
+<%= @restaurant.postal_code %><br>
+<p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+<p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
