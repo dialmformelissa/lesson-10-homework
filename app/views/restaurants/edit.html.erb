@@ -1,25 +1,3 @@
 <h1>Update restaurant</h1>
 
-<%= form_for @restaurant, url: {action: :update} do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
-    
-    <%= f.label :street %><br>
-    <%= f.text_field :street %><br>
-    
-    <%= f.label :city %><br>
-    <%= f.text_field :city %><br>
-    
-    <%= f.label :state %><br>
-    <%= f.text_field :state %><br>
-    
-    <%= f.label :country %><br>
-    <%= f.text_field :country %><br>
-    
-    <%= f.label :postal_code %><br>
-    <%= f.text_field :postal_code %><br>
-  </p>    
-    <%= f.submit %>
-
-<% end %>
+<%= render "form" %>
