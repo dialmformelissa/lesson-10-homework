@@ -1,9 +1,11 @@
 <p><%= link_to "Return to list", restaurants_path %></p>
 <h1><%= @restaurant.name %></h1>
-<%= @restaurant.street %><br>
-<%= @restaurant.city %><br>
-<%= @restaurant.state %><br>
-<%= @restaurant.country %><br>
-<%= @restaurant.postal_code %><br>
+Address: <%= @restaurant.street %><br>
+City: <%= @restaurant.city %><br>
+State: <%= @restaurant.state %><br>
+Country: <%= @restaurant.country %><br>
+Postal code: <%= @restaurant.postal_code %><br>
+<p>Neighborhood: <%= @restaurant.neighborhood.try(:name) %></p>
+
 <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
 <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>

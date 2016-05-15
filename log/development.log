@@ -1271,3 +1271,802 @@ Processing by RestaurantsController#index as HTML
   [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
   Rendered restaurants/index.html.erb within layouts/application (2.2ms)
 Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 12:42:29 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 12:42:30 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 12:42:30 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 12:42:30 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-15 12:42:30 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-15 12:42:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateNeighborhoods (20160515165248)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "neighborhoods" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160515165248"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddNeighborhoodIdToRestaurants (20160515165358)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.1ms)[0m  [1mALTER TABLE "restaurants" ADD "neighborhood_id" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160515165358"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mNeighborhood Load (1.3ms)[0m  [1mSELECT "neighborhoods".* FROM "neighborhoods"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "neighborhoods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Manhattan"], ["created_at", "2016-05-15 16:58:02.347154"], ["updated_at", "2016-05-15 16:58:02.347154"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "neighborhoods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Bronx"], ["created_at", "2016-05-15 16:58:17.276535"], ["updated_at", "2016-05-15 16:58:17.276535"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "neighborhoods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Brooklyn"], ["created_at", "2016-05-15 16:58:22.874299"], ["updated_at", "2016-05-15 16:58:22.874299"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "neighborhoods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Queens"], ["created_at", "2016-05-15 16:58:27.269176"], ["updated_at", "2016-05-15 16:58:27.269176"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "neighborhoods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Staten Island"], ["created_at", "2016-05-15 16:58:34.449871"], ["updated_at", "2016-05-15 16:58:34.449871"]]
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36mNeighborhood Load (0.2ms)[0m  [1mSELECT "neighborhoods".* FROM "neighborhoods"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "neighborhoods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Manhattan"], ["created_at", "2016-05-15 17:01:12.066665"], ["updated_at", "2016-05-15 17:01:12.066665"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.1ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = 'Rest1' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "restaurants" ("name", "street", "city", "country", "postal_code", "neighborhood_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Rest1"], ["street", "street"], ["city", "city"], ["country", "USA"], ["postal_code", "99999"], ["neighborhood_id", 6], ["created_at", "2016-05-15 17:02:45.392613"], ["updated_at", "2016-05-15 17:02:45.392613"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."neighborhood_id" = ?[0m  [["neighborhood_id", 6]]
+  [1m[35mNeighborhood Load (0.2ms)[0m  SELECT "neighborhoods".* FROM "neighborhoods"
+
+
+Started GET "/restaurants/1" for ::1 at 2016-05-15 13:05:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 209ms (Views: 184.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:05:57 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:11:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 237ms (Views: 224.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-15 13:11:23 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 13:11:23 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 13:11:23 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 13:11:23 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-15 13:11:23 -0400
+
+
+Started GET "/restaurants/4/edit" for ::1 at 2016-05-15 13:11:24 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered restaurants/_form.html.erb (24.7ms)
+  Rendered restaurants/edit.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 53ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/restaurants/4" for ::1 at 2016-05-15 13:11:29 -0400
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5MF/b0Bw7YNVWAqT93bvBVNxVBFdiX9zNxeCS2rBcZ4+yUBK7XwLAQYd4+VQe1jUkVh5GtuqLvXnFcE2qtbNaA==", "restaurant"=>{"name"=>"Restaurant #3", "street"=>"3 Street", "city"=>"City3", "state"=>"ST", "country"=>"USA", "postal_code"=>"3333"}, "commit"=>"Update Restaurant", "id"=>"4"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.1ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE ("restaurants"."name" = 'Restaurant #3' AND "restaurants"."id" != 4) LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "restaurants" SET "postal_code" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?[0m  [["postal_code", "3333"], ["updated_at", "2016-05-15 17:11:29.390742"], ["id", 4]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants/4
+Completed 302 Found in 24ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/restaurants/4" for ::1 at 2016-05-15 13:11:29 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered restaurants/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:11:31 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-05-15 13:11:32 -0400
+Processing by RestaurantsController#new as HTML
+  Rendered restaurants/_form.html.erb (3.4ms)
+  Rendered restaurants/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-05-15 13:11:35 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T7sut96lMZ9WIVkThM9zvHcjpaOORlC/vTfahbrKk8mVsxGSc6nXHQVksGUjwsRttQqIqAhlATltNZn4et0vPw==", "restaurant"=>{"name"=>"", "street"=>"", "city"=>"", "state"=>"", "country"=>"", "postal_code"=>""}, "commit"=>"Create Restaurant"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.1ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered restaurants/_form.html.erb (3.7ms)
+  Rendered restaurants/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:11:49 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.4ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 27ms (Views: 26.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:15:03 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 31ms (Views: 27.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 13:15:03 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-15 13:15:03 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 13:15:03 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 13:15:03 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-15 13:15:03 -0400
+
+
+Started GET "/restaurants/1" for ::1 at 2016-05-15 13:15:04 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:15:06 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/restaurants/1" for ::1 at 2016-05-15 13:15:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 214ms (Views: 189.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/restaurants/1/edit" for ::1 at 2016-05-15 13:15:25 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mNeighborhood Load (0.2ms)[0m  SELECT "neighborhoods".* FROM "neighborhoods"
+  Rendered restaurants/_form.html.erb (27.1ms)
+  Rendered restaurants/edit.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/restaurants/1" for ::1 at 2016-05-15 13:15:29 -0400
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B3QIFzZx7l3v0qSxy1HZh1vO9rysNt+UXj0d0NKulf/dfDcym30I37yXTcdsXG5WmefbtyoVjhKOP16tErkpCQ==", "restaurant"=>{"name"=>"Restaurant #0", "street"=>"0 Street", "city"=>"City0", "state"=>"ST", "country"=>"USA", "postal_code"=>"00001", "neighborhood_id"=>"2"}, "commit"=>"Update Restaurant", "id"=>"1"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mRestaurant Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "restaurants" WHERE ("restaurants"."name" = 'Restaurant #0' AND "restaurants"."id" != 1) LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "restaurants" SET "neighborhood_id" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?  [["neighborhood_id", 2], ["updated_at", "2016-05-15 17:15:29.560139"], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/1
+Completed 302 Found in 17ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/restaurants/1" for ::1 at 2016-05-15 13:15:29 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered restaurants/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:15:35 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/restaurants/3/edit" for ::1 at 2016-05-15 13:15:38 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mNeighborhood Load (0.1ms)[0m  [1mSELECT "neighborhoods".* FROM "neighborhoods"[0m
+  Rendered restaurants/_form.html.erb (4.4ms)
+  Rendered restaurants/edit.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/restaurants/3" for ::1 at 2016-05-15 13:15:42 -0400
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fXRzWINNKwY8rbIp+gT4YzUtQ00IF1ibrCymv/flMjWnfEx9LkHNhG/oW19dCU+y9wRuRo40CR18LuXCN/KOww==", "restaurant"=>{"name"=>"Restaurant #2", "street"=>"2 Street", "city"=>"City2", "state"=>"ST", "country"=>"USA", "postal_code"=>"22222", "neighborhood_id"=>"4"}, "commit"=>"Update Restaurant", "id"=>"3"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.1ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE ("restaurants"."name" = 'Restaurant #2' AND "restaurants"."id" != 3) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "restaurants" SET "neighborhood_id" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?[0m  [["neighborhood_id", 4], ["updated_at", "2016-05-15 17:15:42.102773"], ["id", 3]]
+  [1m[35m (1.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants/3
+Completed 302 Found in 8ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-05-15 13:15:42 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-05-15 13:16:21 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (15.6ms)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `neighborhood' for #<Restaurant:0x007fa5d8ddf628>
+Did you mean?  neighborhood_id):
+     5: <%= @restaurant.state %><br>
+     6: <%= @restaurant.country %><br>
+     7: <%= @restaurant.postal_code %><br>
+     8: <%= @restaurant.neighborhood.name %><br>
+     9: <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+    10: <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
+  app/views/restaurants/show.html.erb:8:in `_app_views_restaurants_show_html_erb___1927815701759970633_70175142375100'
+
+
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.2ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (59.9ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (40.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (91.8ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-05-15 13:16:47 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (7.2ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `name' for 4:Fixnum):
+     5: <%= @restaurant.state %><br>
+     6: <%= @restaurant.country %><br>
+     7: <%= @restaurant.postal_code %><br>
+     8: <%= @restaurant.neighborhood_id.name %><br>
+     9: <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+    10: <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
+  app/views/restaurants/show.html.erb:8:in `_app_views_restaurants_show_html_erb___1927815701759970633_70175148668140'
+
+
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.7ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.1ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (88.6ms)
+
+
+Started GET "/restaurants/" for ::1 at 2016-05-15 13:17:51 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 230ms (Views: 216.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/restaurants/3/edit" for ::1 at 2016-05-15 13:17:53 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mNeighborhood Load (0.1ms)[0m  SELECT "neighborhoods".* FROM "neighborhoods"
+  Rendered restaurants/_form.html.erb (29.5ms)
+  Rendered restaurants/edit.html.erb within layouts/application (33.5ms)
+Completed 200 OK in 55ms (Views: 45.5ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/restaurants/3" for ::1 at 2016-05-15 13:18:00 -0400
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YoI/DXqIXW41lTb/zkRfS6l3MhX2Yi44uCMBRpyijmi4igAo14S77GbQ34lpSeiaa14fHnBBf75oIUI7XLUyng==", "restaurant"=>{"name"=>"Restaurant #2", "street"=>"2 Street", "city"=>"City2", "state"=>"ST", "country"=>"USA", "postal_code"=>"22222", "neighborhood_id"=>"4"}, "commit"=>"Update Restaurant", "id"=>"3"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mRestaurant Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "restaurants" WHERE ("restaurants"."name" = 'Restaurant #2' AND "restaurants"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants/3
+Completed 302 Found in 13ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-05-15 13:18:00 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (20.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `neighborhood' for #<Restaurant:0x007fcd74ad86c8>
+Did you mean?  neighborhood_id):
+     5: <%= @restaurant.state %><br>
+     6: <%= @restaurant.country %><br>
+     7: <%= @restaurant.postal_code %><br>
+     8: <%= @restaurant.neighborhood.name %><br>
+     9: <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+    10: <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
+  app/views/restaurants/show.html.erb:8:in `_app_views_restaurants_show_html_erb__2107646240011552813_70260197725700'
+
+
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.0ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.6ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.6ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (95.8ms)
+
+
+Started PATCH "/restaurants/3" for ::1 at 2016-05-15 13:19:11 -0400
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bqmJh1/wCzQeXpDoubpr4z1DInFJ66Oi9JqB7xnA6PK0obai8vzttk0beZ4et9wy/2oPes/I8iQkmMKS2ddUBA==", "restaurant"=>{"name"=>"Restaurant #2", "street"=>"2 Street", "city"=>"City2", "state"=>"ST", "country"=>"USA", "postal_code"=>"22222", "neighborhood_id"=>"1"}, "commit"=>"Update Restaurant", "id"=>"3"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.5ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE ("restaurants"."name" = 'Restaurant #2' AND "restaurants"."id" != 3) LIMIT 1
+  [1m[36mSQL (1.6ms)[0m  [1mUPDATE "restaurants" SET "neighborhood_id" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?[0m  [["neighborhood_id", 1], ["updated_at", "2016-05-15 17:19:11.874377"], ["id", 3]]
+  [1m[35m (0.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants/3
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-05-15 13:19:11 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (17.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `neighborhood' for #<Restaurant:0x007fcd74e29318>
+Did you mean?  neighborhood_id):
+     5: <%= @restaurant.state %><br>
+     6: <%= @restaurant.country %><br>
+     7: <%= @restaurant.postal_code %><br>
+     8: <%= @restaurant.neighborhood.name %><br>
+     9: <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+    10: <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
+  app/views/restaurants/show.html.erb:8:in `_app_views_restaurants_show_html_erb__2107646240011552813_70260197725700'
+
+
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (36.6ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (80.6ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-05-15 13:20:14 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+     5: <%= @restaurant.state %><br>
+     6: <%= @restaurant.country %><br>
+     7: <%= @restaurant.postal_code %><br>
+     8: <%= @restaurant.neighborhood_id.name %><br>
+     9: <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+    10: <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
+  app/views/restaurants/show.html.erb:8:in `_app_views_restaurants_show_html_erb__2107646240011552813_70260205335900'
+
+
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.7ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (47.9ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (39.1ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (84.4ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-05-15 13:20:31 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `neighborhood' for #<Restaurant:0x007fcd74b02310>
+Did you mean?  neighborhood_id):
+     5: <%= @restaurant.state %><br>
+     6: <%= @restaurant.country %><br>
+     7: <%= @restaurant.postal_code %><br>
+     8: <%= @restaurant.neighborhood %><br>
+     9: <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+    10: <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
+  app/views/restaurants/show.html.erb:8:in `_app_views_restaurants_show_html_erb__2107646240011552813_70260201326500'
+
+
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.9ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (85.4ms)
+
+
+Started GET "/restaurants/3" for ::1 at 2016-05-15 13:21:25 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `neighborhood' for #<Restaurant:0x007fcd78068338>
+Did you mean?  neighborhood_id):
+     5: <%= @restaurant.state %><br>
+     6: <%= @restaurant.country %><br>
+     7: <%= @restaurant.postal_code %><br>
+     8: <%= @restaurant.neighborhood.try(:name) %><br>
+     9: <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+    10: <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
+  app/views/restaurants/show.html.erb:8:in `_app_views_restaurants_show_html_erb__2107646240011552813_70260198020640'
+
+
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.1ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (37.8ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (82.2ms)
+
+
+Started GET "/restaurants/" for ::1 at 2016-05-15 13:21:41 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 20ms (Views: 19.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/restaurants/" for ::1 at 2016-05-15 13:21:43 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 13:21:43 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-15 13:21:43 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 13:21:43 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 13:21:43 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-15 13:21:43 -0400
+
+
+Started GET "/restaurants/" for ::1 at 2016-05-15 13:21:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#index as HTML
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT "restaurants".* FROM "restaurants"
+  Rendered restaurants/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 225ms (Views: 213.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 13:21:56 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 13:21:56 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-15 13:21:56 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 13:21:56 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-15 13:21:56 -0400
+
+
+Started DELETE "/restaurants/12" for ::1 at 2016-05-15 13:22:00 -0400
+Processing by RestaurantsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zOLg8AFr0y3yjXbFPZstO9x37DKIM2hPrcPJG+N4mf8W6t/VrGc1r6HIn7OalprqHl7BOQ4QOcl9wYpmI28lCQ==", "id"=>"12"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mDELETE FROM "restaurants" WHERE "restaurants"."id" = ?[0m  [["id", 12]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 13ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:22:00 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.3ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/restaurants/new" for ::1 at 2016-05-15 13:22:02 -0400
+Processing by RestaurantsController#new as HTML
+  [1m[35mNeighborhood Load (0.1ms)[0m  SELECT "neighborhoods".* FROM "neighborhoods"
+  Rendered restaurants/_form.html.erb (46.6ms)
+  Rendered restaurants/new.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/restaurants" for ::1 at 2016-05-15 13:22:15 -0400
+Processing by RestaurantsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MNb8pPaLuAZeYo6QomRahSIQngaTnelAuRzacwXkb/7q3sOBW4dehA0nZ+YFae1U4DmzDRW+uMZpHpkOxfPTCA==", "restaurant"=>{"name"=>"name", "street"=>"street", "city"=>"city", "state"=>"state", "country"=>"cou", "postal_code"=>"9898", "neighborhood_id"=>"1"}, "commit"=>"Create Restaurant"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.1ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = 'name' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "restaurants" ("name", "street", "city", "state", "country", "postal_code", "neighborhood_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "name"], ["street", "street"], ["city", "city"], ["state", "state"], ["country", "cou"], ["postal_code", "9898"], ["neighborhood_id", 1], ["created_at", "2016-05-15 17:22:15.662970"], ["updated_at", "2016-05-15 17:22:15.662970"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants
+Completed 302 Found in 17ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/restaurants" for ::1 at 2016-05-15 13:22:15 -0400
+Processing by RestaurantsController#index as HTML
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  Rendered restaurants/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/restaurants/13/edit" for ::1 at 2016-05-15 13:22:23 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mNeighborhood Load (0.1ms)[0m  [1mSELECT "neighborhoods".* FROM "neighborhoods"[0m
+  Rendered restaurants/_form.html.erb (5.0ms)
+  Rendered restaurants/edit.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/restaurants/13" for ::1 at 2016-05-15 13:22:27 -0400
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Wjlp7vYWUKIVh4ASHEdk58N61OoOvOTI33HDbKDqBQGAMVbLWxq2IEbCaWS7StM2AVP54YiftU4Pc4ARYP259w==", "restaurant"=>{"name"=>"name", "street"=>"street", "city"=>"city", "state"=>"state", "country"=>"cou", "postal_code"=>"9898", "neighborhood_id"=>"3"}, "commit"=>"Update Restaurant", "id"=>"13"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.1ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE ("restaurants"."name" = 'name' AND "restaurants"."id" != 13) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "restaurants" SET "neighborhood_id" = ?, "updated_at" = ? WHERE "restaurants"."id" = ?[0m  [["neighborhood_id", 3], ["updated_at", "2016-05-15 17:22:27.048618"], ["id", 13]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/restaurants/13
+Completed 302 Found in 8ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/restaurants/13" for ::1 at 2016-05-15 13:22:27 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1mSELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1[0m  [["id", 13]]
+  Rendered restaurants/show.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `neighborhood' for #<Restaurant:0x007fbab1010ae0>
+Did you mean?  neighborhood_id):
+     5: <%= @restaurant.state %><br>
+     6: <%= @restaurant.country %><br>
+     7: <%= @restaurant.postal_code %><br>
+     8: <%= @restaurant.neighborhood.try(:name) %><br>
+     9: <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
+    10: <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
+  app/views/restaurants/show.html.erb:8:in `_app_views_restaurants_show_html_erb___1647710479695204180_70219905161400'
+
+
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.6ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.1ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (42.0ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/melissahanson/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.5ms)
+  [1m[36mNeighborhood Load (1.4ms)[0m  [1mSELECT "neighborhoods".* FROM "neighborhoods"[0m
+  [1m[35mNeighborhood Load (0.2ms)[0m  SELECT  "neighborhoods".* FROM "neighborhoods" WHERE "neighborhoods"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "neighborhoods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Long Island"], ["created_at", "2016-05-15 17:26:22.833356"], ["updated_at", "2016-05-15 17:26:22.833356"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.1ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE "restaurants"."name" = 'RestLI' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "restaurants" ("name", "street", "city", "country", "postal_code", "neighborhood_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "RestLI"], ["street", "street"], ["city", "city"], ["country", "country"], ["postal_code", "88888"], ["neighborhood_id", 7], ["created_at", "2016-05-15 17:27:54.124852"], ["updated_at", "2016-05-15 17:27:54.124852"]]
+  [1m[35m (0.5ms)[0m  commit transaction
+  [1m[36mRestaurant Load (0.2ms)[0m  [1mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."neighborhood_id" = ?[0m  [["neighborhood_id", 7]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "neighborhoods" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Long Island"], ["created_at", "2016-05-15 17:29:54.225925"], ["updated_at", "2016-05-15 17:29:54.225925"]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mNeighborhood Load (0.1ms)[0m  SELECT  "neighborhoods".* FROM "neighborhoods" WHERE "neighborhoods"."id" = ? LIMIT 1  [["id", 8]]
+
+
+Started GET "/restaurants/13/edit" for ::1 at 2016-05-15 13:30:45 -0400
+Processing by RestaurantsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mNeighborhood Load (0.2ms)[0m  [1mSELECT "neighborhoods".* FROM "neighborhoods"[0m
+  Rendered restaurants/_form.html.erb (11.7ms)
+  Rendered restaurants/edit.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 51ms (Views: 41.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 13:30:45 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-15 13:30:45 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 13:30:45 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 13:30:45 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-15 13:30:45 -0400
+
+
+Started PATCH "/restaurants/13" for ::1 at 2016-05-15 13:31:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by RestaurantsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UV2xbVOIVjHS8rWPgHb0EO/9+6sVs+kt6MSltzgNk1eLVY5I/oSws4G3XPkne0PBLdTWoJOQuKs4xubK+BovoQ==", "restaurant"=>{"name"=>"name", "street"=>"street", "city"=>"city", "state"=>"state", "country"=>"cou", "postal_code"=>"9898", "neighborhood_id"=>"3"}, "commit"=>"Update Restaurant", "id"=>"13"}
+  [1m[35mRestaurant Load (0.2ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mRestaurant Exists (0.1ms)[0m  SELECT  1 AS one FROM "restaurants" WHERE ("restaurants"."name" = 'name' AND "restaurants"."id" != 13) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/restaurants/13
+Completed 302 Found in 37ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/restaurants/13" for ::1 at 2016-05-15 13:31:00 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mNeighborhood Load (0.1ms)[0m  [1mSELECT  "neighborhoods".* FROM "neighborhoods" WHERE "neighborhoods"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 233ms (Views: 231.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/restaurants/13" for ::1 at 2016-05-15 13:31:03 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mNeighborhood Load (0.1ms)[0m  [1mSELECT  "neighborhoods".* FROM "neighborhoods" WHERE "neighborhoods"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 13:31:04 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 13:31:04 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-15 13:31:04 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-15 13:31:04 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 13:31:04 -0400
+
+
+Started GET "/restaurants/13" for ::1 at 2016-05-15 13:32:23 -0400
+Processing by RestaurantsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mRestaurant Load (0.1ms)[0m  SELECT  "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = ? LIMIT 1  [["id", 13]]
+  [1m[36mNeighborhood Load (0.1ms)[0m  [1mSELECT  "neighborhoods".* FROM "neighborhoods" WHERE "neighborhoods"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered restaurants/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 13:32:24 -0400
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-05-15 13:32:24 -0400
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-05-15 13:32:24 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 13:32:24 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 13:32:24 -0400

@@ -1,4 +1,10 @@
 <%= form_for @restaurant do |f| %>
+
+<% if @restaurant.errors.any? %>
+  <% @restaurant.errors.full_messages. each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+<% end %>
   
   <p>
     <%= f.label :name %><br>
@@ -18,6 +24,10 @@
     
     <%= f.label :postal_code %><br>
     <%= f.text_field :postal_code %><br>
+
+    <%= f.label :neighborhood %><br>
+    <%= collection_select(:restaurant, :neighborhood_id, Neighborhood.all, :id, :name, include_blank: true) %><br>
+
   </p>    
     <%= f.submit %>
 
