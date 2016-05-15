@@ -28,6 +28,9 @@
     <%= f.label :neighborhood %><br>
     <%= collection_select(:restaurant, :neighborhood_id, Neighborhood.all, :id, :name, include_blank: true) %><br>
 
+    <%= f.label :category %><br>
+    <%= collection_check_boxes(:restaurant, :category_ids, Category.all, :id, :name) %>
+
   </p>    
     <%= f.submit %>
 

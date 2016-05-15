@@ -6,6 +6,11 @@ State: <%= @restaurant.state %><br>
 Country: <%= @restaurant.country %><br>
 Postal code: <%= @restaurant.postal_code %><br>
 <p>Neighborhood: <%= @restaurant.neighborhood.try(:name) %></p>
-
+<p>Categories: </p>
+<ul>
+  <% @restaurant.categories.each do |category| %>
+    <li><%= category.name %></li>
+  <% end %>
+</ul>
 <p><%= link_to "Edit", edit_restaurant_path(@restaurant) %></p>
 <p><%= link_to "Delete", restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure?" } %></p>
